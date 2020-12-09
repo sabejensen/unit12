@@ -1,0 +1,123 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: $primaryColor;
+    color: white;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: $primaryColor;
+    z-index: 9999;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.nav-icon {
+    font-size: 24pt;
+}
+nav ul li {
+    float: left;
+}
+nav ul li a {
+    display: block;
+    background-color: $primaryColor;;
+    color: #eee;
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .7rem;
+    text-align: center;
+    width: 33.33vw;
+    max-width: 21.32rem;
+}
+nav ul li:first-child a {border-left: none; padding-left: 0;}
+
+nav ul li a:hover {
+    background-color: lighten($primaryColor, 20%);
+    color: #333;
+}
+nav ul li.active a {
+    background-color: darken($primaryColor, 20%);
+    color: #fff;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+}
+#card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#card-container section {
+    max-width: 80%;
+    margin: 0 10% 0 2%;
+}
+figure {
+    position: relative;
+    width: 100%;
+}
+figure img {
+    width: 100%;
+}
+figcaption {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.295);
+    width: 100%;
+}
+.info-div {
+    width: 98%;
+    margin-left: 12%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.info-div span i {
+    float: left;
+    font-size: 1.8rem;
+}
+.info-div span p {
+    padding-left: 30px;
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    padding: .5rem 2%;
+    height: 68px;
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
